@@ -13,6 +13,7 @@ const Parser = (input) => {
     const circles = /[A-Z]+/g;
     const circleMatch = input.match(circles);
 
+    // set return object
     parseObj = {
       square: numberMatches[0],
       child: {
@@ -32,14 +33,11 @@ const Parser = (input) => {
       },
     };
 
-    console.log(parseObj);
     return parseObj;
   } else {
     return { error: "Invalid input" };
   }
 };
-
-Parser("[12] (BALL(INK[1[35]] (CHARLIE)))");
 
 module.exports = {
   syntax,
