@@ -13,3 +13,4 @@ const Parser = (input) => {
 // const upperCase = /^\([A-Z]*\)$/;
 console.log(Parser("[12] (BALL(INK[1[35]] (CHARLIE)))"));
 // console.log(upperCase.test("(MANUCHa)"));
+

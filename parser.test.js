@@ -1,4 +1,4 @@
-const { syntax } = require("./parser");
+const { syntax, Parser } = require("./parser");
 
 test("Mismatched parenthesis is rejected", () => {
   expect(syntax.test("[12) (BALL(INK[1[35]] (CHARLIE)))")).toBe(false);
@@ -26,4 +26,7 @@ test("Lowercase letters are rejected", () => {
 
 test("Prenthesis inside square brackets is rejected", () => {
   expect(syntax.test("[12] (BALL(INK[1(35)] (CHARLIE)))")).toBe(false);
+});
+test("Invalid parser input returns error", () => {
+  expect(Parser("[12) (BALL(INK[1[35]] (CHARLIE)))")).toStrictEqual({error: 'Invalid input'});
 });
